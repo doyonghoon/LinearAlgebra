@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Responses for the Reading Questions 1: What is Linear Algebra?}
+\author{Yong Hoon, Do}
+\date{\today}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+
+\begin{document}
+
+\maketitle
+
+%--------------------------------------------------------------------------------
+
+\section{Is the equation $x^2+xy+tan(y^3)=0$ linear or not? Why or why not?}
+
+The given equation is not linear because the equation is neither a straight line nor a flat plane. According to the textbook, linear equations have to geometrically give a straight line or, a flat plane depending on the number of variables; every coefficients in equations must be a constant number. The coefficients of those given equations however, consist of compound variables with another variables. This fact leads the conclusion that the given equations are nonlinear equations.
+
+%--------------------------------------------------------------------------------
+
+\section{Find all solutions to the system of two linear equations 2x+3y=-8, x-y=6}
+
+Now we have two equations
+
+\[
+\systeme{
+  2x+3y=-8,
+  x-y=6
+}
+\]
+
+\bigskip
+
+Solving simultaneous equations would work for this case, but eliminating one of the unknown value by substituting works too. We choose one of the equation and to find $x$~, we let $x-y=6$~ be
+\begin{equation}
+y=x-6
+\end{equation}
+
+Then substituting $y=x-6$ into the first equation $2x+3y=-8$
+\begin{equation}
+2x+3(x-6)=-8
+\end{equation}
+
+By using the distributive law and Commutative Laws
+\begin{equation}
+2x+3x=-8+18
+\end{equation}
+
+Thus, we end up with having the constant value for $x$,
+\begin{equation}
+x=2
+\end{equation}
+
+Substituting $x=2$ back to the original equation $x-y=6$~ and we have
+\begin{equation}
+2-y=6
+\end{equation}
+
+So that we get
+\begin{equation}
+y=-4
+\end{equation}
+
+For the conclusion, the only solution to this system of two linear equations is $(x,y)=(2,-4)$.
+
+
+
+%--------------------------------------------------------------------------------
+
+\section{Describe how the production manager might explain the importance of the procedures described in the trail mix application}
+
+With the limited storage space, the production manager is able to maximize the profit as estimating the amounts of trail mix and resulting in minimizing any ingredients leftover each day.
+
+\end{document}

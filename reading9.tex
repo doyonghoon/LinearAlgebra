@@ -1,0 +1,262 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Responses to the Reading Questions 9}
+\author{Yong Hoon, Do}
+\date{\today}
+
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+Spanning Sets
+\end{center}
+
+%--------------------------------------------------------------------------------
+\section{Let S be the set of three vectors below.}
+
+\[
+S=
+\left\{
+\left|
+\begin{array}{c}
+  1 \\
+  2 \\
+  -1 \\
+\end{array}
+\right|
+,
+\left|
+\begin{array}{c}
+  3 \\
+  -4 \\
+  2 \\
+\end{array}
+\right|
+,
+\left|
+\begin{array}{c}
+  4 \\
+  -2 \\
+  1 \\
+\end{array}
+\right|
+\right\}
+\]
+
+Let \(W=<S>\) be the span of \(S\). Is the vector
+\(
+\left|
+\begin{array}{c}
+  -1 \\ 8 \\ -4 \\
+\end{array}
+\right|
+\)
+in \(W\)? Give an explanation of the reason for your answer.
+
+\bigskip
+
+\textbf{Solution:}
+
+I look for scalars \(\alpha_1\), \(\alpha_2\), \(\alpha_3\) so that
+\begin{equation}
+  \alpha_1 \bm{u_1} + \alpha_2 \bm{u_2} + \alpha_3 \bm{u_3} = \bm{w}
+\end{equation}
+
+By Theorem \textbf{Solutions to Linear System are Linear Combinations}, solutions to this
+vector equation are solutions to the system of equations
+
+\begin{equation}
+  \begin{array}{ccc}
+    \alpha_1 + 3\alpha_2 + 4\alpha_3 = -1 \\
+    2\alpha_1 - 4\alpha_2 - 2\alpha_3 = 8 \\
+    -1\alpha_1 + 2\alpha_2 + \alpha_3 = -4 \\
+  \end{array}
+\end{equation}
+
+Building the augmented matrix for this linear system, and row-reducing, gives
+
+\begin{equation}
+ \left| \begin{array}{cccc}
+  $\boxed{1}$~ & 0 & 1 & 2 \\
+  0 & $\boxed{1}$~ & 1 & -1 \\
+  0 & 0 & 0 & 0
+  \end{array} \right|
+\end{equation}
+
+This system is consistent and has infinitely many solutions (there is a free variable in \(\alpha_3\)), but all we need is one solution vector. The solution,
+\begin{equation}
+  \begin{array}{c}
+    \alpha_1 = 1 \\
+    \alpha_2 = -2 \\
+    \alpha_3 = 1 \\
+  \end{array}
+\end{equation}
+
+tell us that
+\begin{equation}
+  (1)\bm{u_1} + (-2)\bm{u_2} + (1)\bm{u_3} = \bm{w}
+\end{equation}
+
+so we are convinced that \(\bm{w}\) really is in \(<S>\). Notice that there are an infinite number of ways to answer this question affirmatively. We could choose a different solution, this time choosing the free variable to be zero,
+
+\begin{equation}
+  (2)\bm{u_1} + (-1)\bm{u_2} + (0)\bm{u_3} = \bm{w}
+\end{equation}
+
+Verifying the arithmetic in this second solution will make it obvious that \(\bm{w}\) is in this span. And of course, we now realize that there are an infinite number of ways to realize \(\bm{w}\) as element of \(<S>\).
+
+%--------------------------------------------------------------------------------
+\section{Use S and W from the previous question. Is the vector
+in \(\bm{W}\)? Give an explanation of the reason for your answer.}
+The given vector is
+\[
+\bm{y}=
+\left|
+\begin{array}{c}
+  6 \\ 5 \\ -1 \\
+\end{array}
+\right|
+\]
+
+\bigskip
+
+\textbf{Solution:}
+
+I look for scalars \(\alpha_1\), \(\alpha_2\), \(\alpha_3\) so that
+\begin{equation}
+  \alpha_1 \bm{u_1} + \alpha_2 \bm{u_2} + \alpha_3 \bm{u_3} = \bm{y}
+\end{equation}
+
+By Theorem \textbf{Solutions to Linear System are Linear Combinations}, solutions to this
+vector equation are solutions to the system of equations
+
+\begin{equation}
+  \begin{array}{ccc}
+    \alpha_1 + 3\alpha_2 + 4\alpha_3 = 6 \\
+    2\alpha_1 - 4\alpha_2 - 2\alpha_3 = 5 \\
+    -1\alpha_1 + 2\alpha_2 + \alpha_3 = -1 \\
+  \end{array}
+\end{equation}
+
+Building the augmented matrix for this linear system, and row-reducing, gives
+
+\begin{equation}
+ \left| \begin{array}{cccc}
+  $\boxed{1}$~ & 0 & 1 & 0 \\
+  0 & $\boxed{1}$~ & 1 & 0 \\
+  0 & 0 & 0 & $\boxed{1}$~
+  \end{array} \right|
+\end{equation}
+
+This system is inconsistent (there is a pivot column in the last column, Theorem \textbf{RCLS}), so there are no scalars \(\alpha_1, \alpha_2, \alpha_3\) that will create a linear combination of \(\bm{u_1}, \bm{u_2}, \bm{u_3}\) that equals \(\bm{y}\). More precisely, \(\bm{y} \notin\ <S>\).
+
+\section{For the matrix \(A\) below, find a set \(S\) so that \(<S>=\mathcal{N}(A)\), where \(\mathcal{N}(A)\) is the null space of \(A\).}
+\[
+A=
+ \left| \begin{array}{cccc}
+ 1 & 3 & 1 & 9 \\
+ 2 & 1 & -3 & 8 \\
+ 1 & 1 & -1 & 5
+ \end{array} \right|
+\]
+
+\textbf{Solution:}
+
+The null space of \(A\) is the set of all solutions to the homogeneous system \(\mathcal{LS}(A,\textbf{0})\).
+RREF is
+
+\begin{equation}
+ \left| \begin{array}{ccccc}
+  $\boxed{1}$~ & 0 & -2 & 3 \\
+  0 & $\boxed{1}$~ & 1 & 2 \\
+  0 & 0 & 0 & 0
+  \end{array} \right|
+\end{equation}
+
+By recognizing \(D={1,2}\), \(F={3,4}\), \(x_3\) and \(x_4\) are free variables and we can interpret each nonzero row as an expression for the deppendent variables \(x_1,x_2\) (respectively) in the free variables \(x_3,x_4\).
+With this we can write the vector form of a solution vector as
+
+\begin{equation}
+  \left| \begin{array}{ccccc}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    x_4 \\
+  \end{array} \right|
+=
+\left| \begin{array}{ccccc}
+  2x_3 - 3x_4 \\
+  -x_3 - 2x_4 \\
+  x_3 \\
+  x_4 \\
+\end{array} \right|
+=
+x_3
+\left| \begin{array}{ccccc}
+  2 \\
+  -1 \\
+  1 \\
+  0 \\
+\end{array} \right|
++
+x_4
+\left| \begin{array}{ccccc}
+  -1 \\
+  -1 \\
+  1 \\
+  0 \\
+\end{array} \right|
+\end{equation}
+
+Then in the notion of Theorem Spanning Sets for Null Spaces,
+
+\begin{equation}
+  z_1 =
+  \left| \begin{array}{ccccc}
+    2 \\
+    -1 \\
+    1 \\
+    0 \\
+  \end{array} \right|
+  ,
+  z_2 =
+  \left| \begin{array}{ccccc}
+    -1 \\
+    -1 \\
+    1 \\
+    0 \\
+  \end{array} \right|
+\end{equation}
+
+and
+\begin{equation}
+  \mathcal{N}(A) = <\{z_1,z_2\}>=
+  \left< \{ \left| \begin{array}{ccccc}
+    2 \\
+    -1 \\
+    1 \\
+    0 \\
+  \end{array} \right|
+  ,
+  \left| \begin{array}{ccccc}
+    -1 \\
+    -1 \\
+    1 \\
+    0 \\
+  \end{array} \right| \} \right>
+\end{equation}
+
+\end{document}

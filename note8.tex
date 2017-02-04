@@ -1,0 +1,162 @@
+\documentclass{exam}
+
+\title{Matrix Operation and Matrix Multiplication}
+\date{\vspace{-5ex}}
+
+\usepackage[utf8]{inputenc}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{chngcntr}
+\usepackage{xstring}
+\usepackage{ifthen}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{deff}{Definition}[section]
+
+\begin{document}
+
+\maketitle
+
+\newcommand{\sol} {\textbf{Solution:}}
+\newcommand{\LIVHS} {\textbf{Linearly Independent Vectors and Homogeneous Systems}}
+\newcommand{\FVCS} {\textbf{Free Variables for Consistent Systems}}
+\newcommand{\HSC} {\textbf{Homogeneous Systems are Consistent}}
+\newcommand{\ls}[1]{$\mathcal{LS}(A,\textbf{#1})$~}
+\newcommand{\p} {$\boxed{1}$~}
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand*\Subtitle[1]{\noindent\textbf{#1}}
+\newcommand*\Domain[1]{\in\mathbb{C}^{#1}}
+\newcommand{\Matrix}[3]{$\begin{vmatrix} #1 \\ #2 \\ #3 \end{vmatrix}$~}
+\newcommand{\Forall}{$\forall$~}
+
+\newcommand{\QAA} {
+\begin{vmatrix}
+  2 & 3 & -1 & 0 \\
+  1 & -2 & 7 & 3 \\
+  1 & 5 & 3 & 2 \\
+\end{vmatrix}
+}
+
+\newcommand{\QAB} {
+\begin{bmatrix}
+  2 \\
+  -3 \\
+  0 \\
+  5 \\
+\end{bmatrix}
+}
+
+\newcommand{\QAC} {
+\begin{bmatrix}
+  6 & 8 & 4 \\
+  -2 & 1 & 0 \\
+  9 & -5 & 6 \\
+\end{bmatrix}
+}
+
+%--------------------------------------------------------------------------------
+\[
+(\alpha A + \beta B) = \conj{\alpha} \conj{A} + \conj{\beta} \conj{B}
+\]
+
+\begin{thm}
+  the adjoint of a matrix A, \(A^{t}\) is its conjugate transpose (or transpose conjugate)
+\end{thm}
+
+\section{Matrix Multiplication}
+\begin{thm}
+  Recall vector equation.
+\end{thm}
+
+\begin{center}
+  \(A\) is \(m \times n\) and \(n\Domain{n}\), Let \(A_i\) be the \(i^{th}\),
+  column of \(A\), then
+  \[
+  A_u = A_1[u]_1 + A_u = A_1[u]_1 + A_2[u]_2 + \dots + A_n [u]_u
+  \]
+\end{center}
+
+\bigskip
+
+\begin{deff}
+  Solution set to \ls{b} is identical to that of \(A\textbf{x}=b\)
+  \[\iff \sum_{i=1}^{n} A_i[x]_i=0\]
+  \begin{center}
+    \(\iff \textbf{x}\) is a solution to \ls{b}
+  \end{center}
+\end{deff}
+
+
+
+
+
+\bigskip
+\bigskip
+
+\begin{thm}
+  If \(Ax = Bx\) $\forall$~ \(x\Domain{n}\) (Assume \(A, B \in\mathbb{M}_{mn}\)) then \(A=B\).
+\end{thm}
+
+\begin{proof}
+Certainly, \(Ae_j = Be_j\) for every \(e_i \Domain{n}\) where \(e_i\) is a unit vector.
+\begin{equation}
+  [Ae_j]_i = \sum_{k=1}^{n}[A]_{ik}[e_j]_k
+\end{equation}
+
+\begin{equation}
+  = \sum_{k=1}^{n}[A]_{ik}[e_{jk}]
+\end{equation}
+
+\begin{equation}
+  = [A]_{ij}
+\end{equation}
+
+\end{proof}
+
+\begin{deff}
+Matrix Multiplication
+\end{deff}
+
+\begin{proof}
+Lets define our \(A\) and \(B\),
+\begin{equation}
+  A_{m \times n} = [A_1 | A_2 | A_3 | \dots | A_n]
+\end{equation}
+
+\begin{equation}
+  B_{m \times k} = [B_1 | B_2 | B_3 | \dots | A_k]
+\end{equation}
+
+Then, we can say that
+
+\begin{equation}
+  A(\alpha x + \beta y) = A\alpha x + A\beta y
+\end{equation}
+
+\begin{equation}
+  \sum_{i=1}^{n} A_i [\alpha x | \beta y]_i = \sum A_i[\alpha x]_i + \sum A_i[\beta y]_i
+\end{equation}
+
+\begin{equation}
+  = \alpha Ax + \beta Ay
+\end{equation}
+
+\[
+A_{m \times n} \hspace{0.5cm}x,y \Domain{n}
+\]
+
+Or,
+
+\[
+AB = \left[AB_1 | AB_2 | AB_3 | \dots | AB_k \right]
+= \left[\sum_{i=1}^{n} A_i[B_1]_i | \dots | A_i[B_k]_i \right]
+\]
+\end{proof}
+\end{document}

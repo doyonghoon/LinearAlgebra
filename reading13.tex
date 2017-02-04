@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Responses to the Reading Questions: Matrix Operations}
+
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+\begin{document}
+
+\maketitle
+
+\newcommand{\sol} {
+  \textbf{Solution:}
+}
+
+\newcommand{\LIVHS} {\textbf{Linearly Independent Vectors and Homogeneous Systems}}
+
+\newcommand{\FVCS} {\textbf{Free Variables for Consistent Systems}}
+
+\newcommand{\HSC} {\textbf{Homogeneous Systems are Consistent}}
+
+\newcommand{\ls} {\(\mathcal{LS}(A,\textbf{0})\)}
+
+\newcommand{\p} {$\boxed{1}$~}
+
+\newcommand{\QAA} {
+\begin{bmatrix}
+  2 & -2 & 8 & 1 \\
+  4 & 5 & -1 & 3 \\
+  7 & -3 & 0 & 2 \\
+\end{bmatrix}
+}
+
+\newcommand{\QAB} {
+\begin{bmatrix}
+  2 & 7 & 1 & 2 \\
+  3 & -1 & 0 & 5 \\
+  1 & 7 & 3 & 3 \\
+\end{bmatrix}
+}
+
+\newcommand{\QAC} {
+\begin{bmatrix}
+  6 & 8 & 4 \\
+  -2 & 1 & 0 \\
+  9 & -5 & 6 \\
+\end{bmatrix}
+}
+
+%--------------------------------------------------------------------------------
+\section{Perform the following matrix computation.}
+
+\[
+(6) \QAA + (-2) \QAB
+\]
+
+\sol
+
+First of all, multiply the scalar values with the matrices
+\begin{equation}
+  =
+  \begin{bmatrix}
+    12 & -12 & 48 & 6 \\
+    24 & 30 & -6 & 18 \\
+    42 & -18 & 0 & 12 \\
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+    -4 & -14 & -2 & 4 \\
+    -6 & 2 & 0 & -10 \\
+    -2 & -14 & -6 & -6 \\
+  \end{bmatrix}
+\end{equation}
+
+Then operating addition two matrices to complete
+
+\begin{equation}
+  =
+  \begin{bmatrix}
+    8 & -26 & 46 & 10 \\
+    18 & 32 & -6 & 8 \\
+    40 & -32 & -6 & 6 \\
+  \end{bmatrix}
+\end{equation}
+
+\bigskip
+
+%--------------------------------------------------------------------------------
+\section{Theorem VSPM reminds you of what previous theorem? How strong is the similarity?}
+
+\sol
+
+It reminds of Vector Operations such as Column Vector Addition
+and Column Vector Scalar Multiplication.
+
+The domain for \(i\) is \(1 \le i \le m\),
+
+\begin{equation}
+  [u+v]_i = [u]_i + [v]_i
+\end{equation}
+
+We can perform vector scalar multiplication according to the definition of Column Vector Scalar Multiplication such that
+\begin{equation}
+  [\alpha u]_i = \alpha[u]_i
+\end{equation}
+
+According to the theorem, Vector Space Properties of Matrices,
+we can perform operations; adding and multiplying matrices as vectors do so.
+
+\bigskip
+
+%--------------------------------------------------------------------------------
+\section{Compute the transpose of the matrix below.}
+
+\[
+\QAC
+\]
+
+\sol
+
+Formulating the transpose,
+
+\begin{equation}
+  \begin{bmatrix}
+    6 & -2 & 9 \\
+    8 & 1 & -5 \\
+    4 & 0 & 6 \\
+  \end{bmatrix}
+\end{equation}
+
+This is it.
+
+\end{document}

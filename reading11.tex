@@ -1,0 +1,162 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Responses to the Reading Questions: Linear Dependence and Spans}
+
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+\begin{document}
+
+\maketitle
+
+\newcommand{\sol} {
+  \textbf{Solution:}
+}
+
+\newcommand{\LIVHS} {\textbf{Linearly Independent Vectors and Homogeneous Systems}}
+
+\newcommand{\FVCS} {\textbf{Free Variables for Consistent Systems}}
+
+\newcommand{\HSC} {\textbf{Homogeneous Systems are Consistent}}
+
+\newcommand{\ls} {\(\mathcal{LS}(A,\textbf{0})\)}
+
+\newcommand{\p} {$\boxed{1}$~}
+
+%--------------------------------------------------------------------------------
+\noindent\textbf{Question1} Let \(S\) be the linearly dependent set of three vectors below.
+\[
+S=
+\begin{Bmatrix}
+  \begin{bmatrix}
+    1 \\
+    10 \\
+    100 \\
+    1000 \\
+  \end{bmatrix}
+,
+\begin{bmatrix}
+  1 \\
+  1 \\
+  1 \\
+  1 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+  5 \\
+  23 \\
+  203 \\
+  2003 \\
+\end{bmatrix}
+\end{Bmatrix}
+\]
+
+\bigskip
+
+\sol
+
+The given Set \(S\) of vectors implies that  there exist scalars \(a_1, a_2, a_3\)
+such that \(a_1 v_1 + a_2 v_2 + a_3 v_3 = 0\) where at least one of the \(a \neq 0\)
+Writing the equation out in matrix form
+
+\[
+\begin{bmatrix}
+  1 & 1 & 5 \\
+  10 & 1 & 23 \\
+  100 & 1 & 203 \\
+  1000 & 1 & 2003
+\end{bmatrix}
+\begin{bmatrix}
+  a_1 \\
+  a_2 \\
+  a_3 \\
+  a_4
+\end{bmatrix}
+=
+\begin{bmatrix}
+  0 \\
+  0 \\
+  0 \\
+  0
+\end{bmatrix}
+\]
+
+and row reducing this matrix then we get
+\begin{equation}
+  \begin{bmatrix}
+    \p & 0 & 2 \\
+    0 & \p & 3 \\
+    0 & 0 & 0 \\
+    0 & 0 & 0 \\
+  \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+  \begin{matrix}
+    x_1=-2x_3 \\
+    x_2 = -3x_3 \\
+    x_3 = x_3 \\
+  \end{matrix}
+\end{equation}
+
+Now, if we choose \(x_3 = 1\) we find the solution
+\(
+\begin{bmatrix}
+  -2 \\
+  -3 \\
+  1
+\end{bmatrix}
+\)
+So, we can write the relation as \(-2v_1-3v_2+v_3=0\). Solving for \(v_3\), \(v_3=3v_2+2v_1\)
+Which will allow us to write \(V=<S> = <\{v_1, v_2, v_3\}> = <\{v_1, v_2\}>\)
+Let \(S'=\{v_1, v_2\}\) and \(V'=<S'>\) then \(V=V'\)
+
+1) \(V' \subseteq V\) Entry vector of \(S'\) is in \(S\)
+2) \(V' \subseteq V\) There are scalars \(a_1, a_2, a_3\) such that
+
+\begin{equation}
+  \begin{matrix}
+    V = a_1 v_1 + a_2 v_2 + a_3 v_3 \\
+      = a_1 v_1 + a_2 v_2 + a_3 (3v_3 + 2v_1) \\
+      = a_1 v_1 + a_2 v_2 + 3 a_3 v_3 + 2 a_3 v_1) \\
+      = (a_1 + 2 a_3) v_1 + (a_2 + 3 a_3) v_2
+  \end{matrix}
+\end{equation}
+
+\(V\) can be written as a linear combination of the vectors in \(S'\)
+
+\bigskip
+\bigskip
+
+%--------------------------------------------------------------------------------
+\noindent\textbf{Question2} Explain why the word “dependent” is used in the definition of linear dependence.
+
+\bigskip
+
+\sol
+
+In any linearly dependent set there is always one vector that can be written as a linear combination of the others.
+This is the substance of the upcoming Theorem \textbf{Dependency in Linearly Dependent Sets}.
+Perhaps this will explain the use of the word “dependent.”
+
+\bigskip
+\bigskip
+
+%--------------------------------------------------------------------------------
+\noindent\textbf{Question3} Suppose that \(Y=<P>=<Q>\), where \(P\) is a linearly dependent set and \(Q\) is linearly dependent.
+Would you rather use \(P\) or \(Q\) to describe \(Y\)? Why?
+
+\bigskip
+
+\sol
+
+I would rather use the set \(Q\) because the linear independence of \(Q\) guarantees uniqueness in the solution of \(Y\)
+
+\end{document}

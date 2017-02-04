@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Responses to the Reading Questions: Orthogonality}
+
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+\begin{document}
+
+\maketitle
+
+\newcommand{\sol} {
+  \textbf{Solution:}
+}
+
+\newcommand{\LIVHS} {\textbf{Linearly Independent Vectors and Homogeneous Systems}}
+
+\newcommand{\FVCS} {\textbf{Free Variables for Consistent Systems}}
+
+\newcommand{\HSC} {\textbf{Homogeneous Systems are Consistent}}
+
+\newcommand{\ls} {\(\mathcal{LS}(A,\textbf{0})\)}
+
+\newcommand{\p} {$\boxed{1}$~}
+
+\newcommand{\QAA} {
+\begin{bmatrix}
+  1 \\
+  -1 \\
+  2 \\
+\end{bmatrix}
+}
+
+\newcommand{\QAB} {
+\begin{bmatrix}
+  5 \\
+  3 \\
+  -1 \\
+\end{bmatrix}
+}
+
+\newcommand{\QAC} {
+\begin{bmatrix}
+  8 \\
+  4 \\
+  -2 \\
+\end{bmatrix}
+}
+
+%--------------------------------------------------------------------------------
+\noindent\textbf{Question1} is the set
+\(
+\begin{Bmatrix}
+  \QAA, \QAB, \QAC
+\end{Bmatrix}
+\)
+
+\sol
+
+\begin{equation}
+  \begin{matrix}
+    <\QAA, \QAB> = 5 + (-3) + 2 = 0 \\ \\
+    <\QAB, \QAC> = 40 + 12 + 2 = 54 \\ \\
+    <\QAA, \QAC> = 8 - 4 -4 = 0 \\ \\
+  \end{matrix}
+\end{equation}
+
+This is not an orthogonal set because one of the inner products of the set
+
+\begin{equation}
+<\QAB, \QAC> = 40 + 12 + 2 = 54 \neq 0
+\end{equation}
+
+\bigskip
+
+\noindent\textbf{Question2} What is the distinction between an orthogonal set and an orthogonal set?
+
+\sol
+
+An orthonormal set is an orthogonal set but the norm of the vectors from that set is equal to 1.
+
+\bigskip
+\bigskip
+
+\noindent\textbf{Question3} What is nice about the output of the Gram-Schmidt process?
+
+\sol
+
+For a linearly dependent sequence it outputs the \(O\) vector,
+and for a linearly independent set of \(p\) vectors it
+outputs an orthogonal set of \(p\) vectors.
+
+\end{document}

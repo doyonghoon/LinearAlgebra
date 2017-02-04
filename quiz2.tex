@@ -1,0 +1,239 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Corrections for Quiz 2}
+
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+\begin{document}
+
+\maketitle
+
+\newcommand{\sol} {
+  \textbf{Solution:}
+}
+
+\newcommand{\LIVHS} {\textbf{Linearly Independent Vectors and Homogeneous Systems}}
+
+\newcommand{\FVCS} {\textbf{Free Variables for Consistent Systems}}
+
+\newcommand{\HSC} {\textbf{Homogeneous Systems are Consistent}}
+
+\newcommand{\ls} {\(\mathcal{LS}(A,\textbf{0})\)}
+
+\newcommand{\nullspace} {\(\mathcal{N}(A)\)}
+
+\newcommand{\p} {$\boxed{1}$~}
+
+%--------------------------------------------------------------------------------
+\section{Question1}
+
+According to the question, the given matrix is not in homogeneous system, but it is the matrix that we are only interested in determining whether it is singular or nonsingular.
+
+
+\section{Question2}
+I had a mistake on copying numbers from the system of equations when building an augmented matrix.
+As a result, I had a wrong vector form.
+
+The augmented matrix and the row reduced matrix should look like
+
+\begin{equation}
+  \begin{bmatrix}
+    2 & -4 & 3 & 0 & 1 & 6 \\
+    1 & -2 & -2 & 14 & -4 & 15 \\
+    1 & -2 & 1 & 2 & 1 & -1 \\
+    -2 & 4 & 0 & -12 & 1 & -7
+  \end{bmatrix}
+\xrightarrow[]{\text{RREF}}
+\begin{bmatrix}
+  \p & -2 & 0 & 6 & 0 & 1 \\
+  0 & 0 & \p & -4 & 0 & 3 \\
+  0 & 0 & 0 & 0 & \p & -5 \\
+  0 & 0 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}
+\end{equation}
+
+Now vector form will be
+
+\begin{equation}
+  \left\{
+    x_2
+    \begin{bmatrix}
+      2 \\
+      1 \\
+      0 \\
+      0 \\
+      0 \\
+    \end{bmatrix}
+    +
+    x_4
+    \begin{bmatrix}
+      -6 \\
+      0 \\
+      4 \\
+      1 \\
+      0 \\
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+      1 \\
+      0 \\
+      3 \\
+      0 \\
+      -5 \\
+    \end{bmatrix}
+    |
+    x_2, x_4\in\mathbb{C}
+  \right\}
+\end{equation}
+
+\section{Question3}
+\noindent\textbf{a)} I had a wrong solution set to the \nullspace. The correct solution set will be
+\[
+S=
+\left\{
+  \begin{vmatrix}
+    x_1 = x_3 + x_4 \\
+    x_2 = -x_3 - 2x_4 \\
+    x_3 = x_3 \\
+    x_4 = x_4
+  \end{vmatrix}
+  |
+  x_3, x_4\in\mathbb{C}
+\right\}
+\]
+
+And the correct vector form is
+
+\[
+S=
+\left\{
+  x_3
+  \begin{vmatrix}
+    1 \\
+    -1 \\
+    1 \\
+    0
+  \end{vmatrix}
+  +
+  x_4
+  \begin{vmatrix}
+    1 \\
+    -2 \\
+    0 \\
+    1
+  \end{vmatrix}
+  |
+  x_3, x_4\in\mathbb{C}
+\right\}
+\]
+
+Thus,
+\[
+\mathcal{N}(A) = <S>=
+\left\{
+  \begin{vmatrix}
+    1 \\
+    -1 \\
+    1 \\
+    0
+  \end{vmatrix}
+  ,
+  \begin{vmatrix}
+    1 \\
+    -2 \\
+    0 \\
+    1
+  \end{vmatrix}
+\right\}
+\]
+
+\noindent\textbf{c)} I had a wrong calculation based on the wrong solution set, and I picked wrong numbers for \(x_3, x_4\).
+The correct answer should be
+
+\[
+  x_3
+  \begin{vmatrix}
+    1 \\
+    -1 \\
+    1 \\
+    0
+  \end{vmatrix}
+  +
+  x_4
+  \begin{vmatrix}
+    1 \\
+    -2 \\
+    0 \\
+    1
+  \end{vmatrix}
+  =z=
+  \begin{vmatrix}
+    3 \\
+    -5 \\
+    1 \\
+    2
+  \end{vmatrix}
+\]
+
+We can \(z\) vector by choosing \(x_3=1, x_4=2\)
+\[
+z=
+  \begin{vmatrix}
+    1 \\
+    -1 \\
+    1 \\
+    0
+  \end{vmatrix}
+  +
+  \begin{vmatrix}
+    2 \\
+    -4 \\
+    0 \\
+    2
+  \end{vmatrix}
+=
+  \begin{vmatrix}
+    3 \\
+    -5 \\
+    1 \\
+    2
+  \end{vmatrix}
+\]
+
+\section{Question4}
+
+While checking a relation of linear dependence, I skipped the step that shows how the relation of linear dependence on the given set is strongly associated with a system of equations.
+Since we have to show every scalars must be \(0\) to justify the given set is a linearly independent, I had to add a step that the scalars used in a relation of linear dependence is \(0\).
+
+\bigskip
+
+Check a relation of linear dependence
+\begin{equation}
+  \alpha_1(v_1) + \alpha_2(v_1 + v_2) + \alpha_3(v_1+v_2+v_3) + \alpha_4(v_1+v_2+v_3+v_4) = 0
+\end{equation}
+
+\begin{equation}
+v_1(\alpha_1) + v_2(\alpha_1 + \alpha_2) + v_3(\alpha_1 + \alpha_2 + \alpha_3) + v_4(\alpha_1 + \alpha_2 + \alpha_3 + \alpha_4) = 0
+\end{equation}
+
+Now, I can build a system of equations based on the fact that the relation of linear dependence would be equal to zero.
+
+\begin{equation}
+  \begin{matrix}
+    \alpha_1 + \alpha_2 + \alpha_3 + \alpha_4 = 0 \\
+    \alpha_1 + \alpha_2 + \alpha_3 = 0 \\
+    \alpha_1 + \alpha_2 = 0 \\
+    \alpha_1 = 0
+  \end{matrix}
+\end{equation}
+
+Since \(\alpha_1 = 0\), then every scalars must be zero. Thus, the given set is a linearly independent.
+\end{document}

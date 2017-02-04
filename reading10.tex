@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Responses to the Reading Questions 10}
+\author{Yong Hoon, Do}
+\date{\today}
+
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+Spanning Sets
+\end{center}
+
+\newcommand{\sol} {
+  \textbf{Solution:}
+}
+
+\newcommand{\LIVHS} {\textbf{Linearly Independent Vectors and Homogeneous Systems}}
+
+\newcommand{\FVCS} {\textbf{Free Variables for Consistent Systems}}
+
+\newcommand{\HSC} {\textbf{Homogeneous Systems are Consistent}}
+
+\newcommand{\ls} {
+\(\mathcal{LS}(A,\textbf{0})\)
+}
+
+%--------------------------------------------------------------------------------
+\section{Let \(S\) be the set of three vectors below.}
+\newcommand{\exone}{
+  S=
+  \left\{
+  \left|
+  \begin{array}{c}
+    1 \\
+    2 \\
+    -1 \\
+  \end{array}
+  \right|
+  ,
+  \left|
+  \begin{array}{c}
+    3 \\
+    -4 \\
+    2 \\
+  \end{array}
+  \right|
+  ,
+  \left|
+  \begin{array}{c}
+    4 \\
+    -2 \\
+    1 \\
+  \end{array}
+  \right|
+  \right\}
+}
+
+\newcommand{\extwo}{
+  S=
+  \left\{
+  \left|
+  \begin{array}{c}
+    1 \\
+    -1 \\
+    0 \\
+  \end{array}
+  \right|
+  ,
+  \left|
+  \begin{array}{c}
+    3 \\
+    2 \\
+    2 \\
+  \end{array}
+  \right|
+  ,
+  \left|
+  \begin{array}{c}
+    4 \\
+    4 \\
+    -4 \\
+  \end{array}
+  \right|
+  \right\}
+}
+
+\[
+\exone
+\]
+
+Is \(S\) linearly independent or linearly dependent? Explain why.
+
+\bigskip
+
+\sol
+
+To determine linear independence we first form a relation of linear dependence,
+\begin{equation}
+  A =
+  \left|
+  \begin{array}{cccc}
+    1 & 3 & 4 \\
+    2 & -4 & -2 \\
+    -1 & 2 & 1 \\
+  \end{array}
+  \right|
+  \xrightarrow[]{\text{RREF}}
+  \left|
+  \begin{array}{cccc}
+    $\boxed{1}$~ & 0 & 1 \\
+    0 & $\boxed{1}$~ & 1 \\
+    0 & 0 & 0 \\
+  \end{array}
+  \right|
+\end{equation}
+
+Now, \(r=2\), so there are \(n-r=3-2=1 > 0\) free variables and we see that \(\mathcal{LS}(A,\textbf{0})\) has infinitely many solutions (\LIVHS, \FVCS, \HSC), the set \(S\) is linearly dependent.
+
+%--------------------------------------------------------------------------------
+\section{Let \(S\) be the set of three vectors below.}
+
+\[
+\extwo
+\]
+
+\begin{equation}
+  A =
+  \left|
+  \begin{array}{cccc}
+    1 & 3 & 4 \\
+    -1 & 2 & 4 \\
+    0 & 2 & -4 \\
+  \end{array}
+  \right|
+  \xrightarrow[]{\text{RREF}}
+  \left|
+  \begin{array}{cccc}
+    $\boxed{1}$~ & 0 & 1 \\
+    0 & $\boxed{1}$~ & 1 \\
+    0 & 0 & $\boxed{1}$~ \\
+  \end{array}
+  \right|
+\end{equation}
+
+Now, \(r=3\), so there are \(n-r=3-3=0 > 0\) free variables and
+we see that \(\mathcal{LS}(A,\textbf{0})\) has a unique solution
+(\FVCS, \HSC). By the theorem of \LIVHS, the set \(S\) is linearly independent.
+
+%--------------------------------------------------------------------------------
+\section{Is the matrix below singular or nonsingular? Explain your answer using only the final conclusion you reached in the previous question, along with one new theorem.}
+
+\[
+\left|
+\begin{array}{cccc}
+  1 & 3 & 4 \\
+  -1 & 2 & 3 \\
+  0 & 2 & -4 \\
+\end{array}
+\right|
+\]
+
+\sol
+
+The given matrix a nonsingular matrix since the homogeneous system, \ls, has only the trivial solution.
+According to the definition of nonsingular matrices, the homogeneous system \ls has a unique solution.
+So by the theorem \LIVHS, the columns of \(B\) form a linearly independent set.
+
+\end{document}

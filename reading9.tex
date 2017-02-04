@@ -214,49 +214,41 @@ x_3
 +
 x_4
 \left| \begin{array}{ccccc}
-  -1 \\
-  -1 \\
-  1 \\
+  -3 \\
+  -2 \\
   0 \\
+  1 \\
 \end{array} \right|
 \end{equation}
 
 Then in the notion of Theorem Spanning Sets for Null Spaces,
 
-\begin{equation}
-  z_1 =
+\newcommand{\myzOne}{
   \left| \begin{array}{ccccc}
     2 \\
     -1 \\
     1 \\
     0 \\
   \end{array} \right|
-  ,
-  z_2 =
+}
+
+\newcommand{\myzTwo}{
   \left| \begin{array}{ccccc}
-    -1 \\
-    -1 \\
-    1 \\
+    -3 \\
+    -2 \\
     0 \\
+    1 \\
   \end{array} \right|
+}
+
+\begin{equation}
+  z_1 = \myzOne, z_2 = \myzTwo
 \end{equation}
 
 and
 \begin{equation}
   \mathcal{N}(A) = <\{z_1,z_2\}>=
-  \left< \{ \left| \begin{array}{ccccc}
-    2 \\
-    -1 \\
-    1 \\
-    0 \\
-  \end{array} \right|
-  ,
-  \left| \begin{array}{ccccc}
-    -1 \\
-    -1 \\
-    1 \\
-    0 \\
-  \end{array} \right| \} \right>
+  \left< \{ \myzOne, \myzTwo \} \right>
 \end{equation}
 
 \end{document}

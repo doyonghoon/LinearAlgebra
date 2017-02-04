@@ -1,0 +1,248 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Responses to the Reading Questions: Matrix Multiplication}
+
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{systeme}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+\begin{document}
+
+\maketitle
+
+\newcommand{\sol} {
+  \textbf{Solution:}
+}
+
+\newcommand{\LIVHS} {\textbf{Linearly Independent Vectors and Homogeneous Systems}}
+
+\newcommand{\FVCS} {\textbf{Free Variables for Consistent Systems}}
+
+\newcommand{\HSC} {\textbf{Homogeneous Systems are Consistent}}
+
+\newcommand{\ls} {\(\mathcal{LS}(A,\textbf{0})\)}
+
+\newcommand{\p} {$\boxed{1}$~}
+
+\newcommand{\QAA} {
+\begin{bmatrix}
+  2 & 3 & -1 & 0 \\
+  1 & -2 & 7 & 3 \\
+  1 & 5 & 3 & 2 \\
+\end{bmatrix}
+}
+
+\newcommand{\QAB} {
+\begin{bmatrix}
+  2 \\
+  -3 \\
+  0 \\
+  5 \\
+\end{bmatrix}
+}
+
+\newcommand{\QAC} {
+\begin{bmatrix}
+  6 & 8 & 4 \\
+  -2 & 1 & 0 \\
+  9 & -5 & 6 \\
+\end{bmatrix}
+}
+
+%--------------------------------------------------------------------------------
+\section{Form the matrix vector product of the following matrices}
+
+\begin{center}
+  \(\QAA\) with \(\QAB\)
+\end{center}
+
+\sol
+
+By having an interest in realizing the size of the given matrices,
+
+we are multiplying \(3 \times 4\) matrix with \(4 \times 1\). So we can rewrite it as
+
+\begin{equation}
+  \QAA \times \QAB
+\end{equation}
+
+Then, the resultant matrix will be \(3 \times 1\).
+
+\begin{equation}
+  \begin{bmatrix}
+    (4 - 9 + 0 + 0) \\
+    (2 + 6 + 0 + 15) \\
+    (2 - 15 + 0 + 10) \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    -5 \\
+    23 \\
+    -3
+  \end{bmatrix}
+\end{equation}
+
+\bigskip
+
+
+%--------------------------------------------------------------------------------
+\section{Multiply together the two matrices below (in the order given)}
+
+\[
+\begin{bmatrix}
+  2 & 3& -1 & 0 \\
+  1 & -2 & 7 & 3 \\
+  1 & 5 & 3 & 2
+\end{bmatrix}
+\hspace{1cm}
+\begin{bmatrix}
+  2 & 6 \\
+  -3 & -4 \\
+  0 & 2 \\
+  3 & -1
+\end{bmatrix}
+\]
+
+\sol
+
+The first matrix is \(3 \times 4\) and the second matrix is \(4 \times 2\)
+so the resultant matrix will be \(3 \times 2\) matrix.
+
+\begin{equation}
+  \begin{bmatrix}
+    (4 - 9 + 0 + 0) & (12 - 12 -2 + 0) \\
+    (2 + 6 + 0 + 9) & (6 + 8 + 14 - 3) \\
+    (2 - 15 + 0 + 6) & (6 - 20 + 6 - 2) \\
+  \end{bmatrix}
+\end{equation}
+
+This is the resultant matrix after the operations performed
+
+\begin{equation}
+  =
+  \begin{bmatrix}
+    -5 & -2 \\
+    17 & 25 \\
+    -7 & -10
+  \end{bmatrix}
+\end{equation}
+
+\bigskip
+
+%--------------------------------------------------------------------------------
+\section{Rewrite the system of linear equations below as a vector equality and using a matrix-vector product. (This question does not ask for a solution to the system. But it does ask you to express the system of equations in a new form using tools from this section.)}
+
+\[
+\begin{matrix}
+  2x_1 + 3x_2 - x_3 = 0 \\
+  x_1 + 2x_2 + x_3 = 3 \\
+  x_1 + 3x_2 + 3x_3 = 7
+\end{matrix}
+\]
+
+\sol
+
+The system of linear equations has coefficient matrix and vector of constants
+
+\begin{equation}
+  \textbf{A}=
+  \begin{bmatrix}
+    2 & 3& -1 \\
+    1 & 2 & 1 \\
+    1 & 3 & 3 \\
+  \end{bmatrix}
+  \hspace{1cm}
+  \textbf{b}=
+  \begin{bmatrix}
+    0 \\
+    3 \\
+    7
+  \end{bmatrix}
+\end{equation}
+
+so will be described compactly by the vector equation
+\begin{equation}
+  \textit{A}\textbf{x} = \textbf{b}
+\end{equation}
+
+Now, I am interested in finding the vector of a solution \(\mathbf{x}\) to \(\mathbf{A}\), and this is the augmented matrix
+
+\begin{equation}
+  \begin{bmatrix}
+    2 & 3& -1 & 0 \\
+    1 & 2 & 1 & 3 \\
+    1 & 3 & 3 & 7 \\
+  \end{bmatrix}
+\xrightarrow[]{\text{RREF}}
+\begin{bmatrix}
+  \p & 0 & 0 & 1 \\
+  0 & \p & 0 & 0 \\
+  0 & 0 & \p & 2 \\
+\end{bmatrix}
+\end{equation}
+
+so the solutions to the given system of equations is that
+
+\begin{equation}
+  \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    1 \\
+    0 \\
+    2
+  \end{bmatrix}
+\end{equation}
+
+Thus, we can write the matrix
+
+\begin{equation}
+  \begin{bmatrix}
+    2 & 3& -1 \\
+    1 & 2 & 1 \\
+    1 & 3 & 3 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 \\
+    3 \\
+    7
+  \end{bmatrix}
+  \xrightarrow[]{}
+  \begin{bmatrix}
+    2 & 3& -1 \\
+    1 & 2 & 1 \\
+    1 & 3 & 3 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    1 \\
+    0 \\
+    2 \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0 \\
+    3 \\
+    7
+  \end{bmatrix}
+\end{equation}
+
+\bigskip
+
+This is the end of my homework for today. Let me go back home. Thanks for reading my homework.
+
+\end{document}
